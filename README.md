@@ -34,3 +34,13 @@ The lab covered both **polynomial regression** and **neural network** models, pr
 - Model evaluation on training, CV, and test sets
 - Hyperparameter tuning (degree, λ, architecture)
 - Visualization of model performance curves
+
+## 🚧 Challenges Faced
+1. **Understanding the 3-Way Split:** Grasping why we need three separate datasets (training, CV, test) instead of just two, and the role of each in model development.
+2. **Bias-Variance Trade-off:** Interpreting the relationship between model complexity, training error, and CV error to diagnose whether a model is underfitting or overfitting.
+3. **Regularization Parameter Tuning:** Understanding how increasing λ (regularization) reduces overfitting but can lead to underfitting if set too high.
+4. **Learning Curves Interpretation:** Understanding that increasing training data helps high variance models but does not improve high bias models.
+5. **Neural Network Architecture Design:** Choosing appropriate layer sizes and activations for classification problems.
+6. **Classification Error Calculation:** Implementing the function to count incorrect predictions and compute the fraction of errors.
+7. **Regularization in Keras:** Using `kernel_regularizer=tf.keras.regularizers.l2(0.1)` in Dense layers.
+
