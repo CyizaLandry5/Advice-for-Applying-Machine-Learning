@@ -44,3 +44,54 @@ The lab covered both **polynomial regression** and **neural network** models, pr
 6. **Classification Error Calculation:** Implementing the function to count incorrect predictions and compute the fraction of errors.
 7. **Regularization in Keras:** Using `kernel_regularizer=tf.keras.regularizers.l2(0.1)` in Dense layers.
 
+## 📋 Important Submission Notes (AutoGrader)
+To avoid grader errors from the DeepLearning.AI AutoGrader, I made sure NOT to:
+- Add any extra `print` statements in the assignment
+- Add any extra code cells
+- Change any of the function parameters
+- Use global variables inside graded exercises (unless specifically instructed)
+- Change the assignment code where not required
+
+> 💡 **Tips:**
+> - Use `# grade-up-to-here` in graded cells to check progress
+> - Do not edit or delete non-graded cells
+> - Save and submit the notebook for grading
+
+## 🛠️ Technologies & Tools
+- Python 3
+- NumPy
+- Matplotlib
+- scikit-learn (LinearRegression, Ridge, train_test_split, PolynomialFeatures)
+- TensorFlow/Keras (Sequential, Dense, regularizers)
+- Custom utility functions (assigment_utils.py)
+
+## 📈 Results
+
+### Polynomial Regression Results
+**Optimal Degree:** Found using CV error minimization
+- Training error decreases as degree increases (as expected)
+- CV error decreases initially, then increases (overfitting)
+- Optimal degree at the minimum of CV error curve
+
+**Regularization Tuning:**
+- λ = 0 → High variance (overfitting)
+- Moderate λ → Good generalization
+- Large λ → High bias (underfitting)
+
+**Learning Curves:**
+- More training data improves high variance models
+- Does NOT significantly improve high bias models
+
+### Neural Network Results
+
+| Model | Architecture | Training Error | CV Error | Analysis |
+|-------|--------------|----------------|----------|----------|
+| **Complex** | 3 layers (120, 40, 6) | ~0.005 | ~0.05 | Overfitting (high variance) |
+| **Simple** | 2 layers (6, 6) | ~0.08 | ~0.10 | Moderate bias/variance |
+| **Regularized** | 3 layers + L2(0.1) | ~0.06 | ~0.08 | Good generalization |
+
+**Best Model:** Regularized complex model with λ = 0.1
+- Balanced performance on training and CV sets
+- Comparable to "ideal" model performance
+- Test performance consistent with CV performance
+
