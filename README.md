@@ -112,3 +112,16 @@ def eval_mse(y, yhat):
     m = len(y)
     err = sum((yhat[i] - y[i])**2 for i in range(m))
     return err / (2 * m)
+
+# Classification Error
+def eval_cat_err(y, yhat):
+    m = len(y)
+    incorrect = sum(1 for i in range(m) if yhat[i] != y[i])
+    return incorrect / m
+
+# Neural Network with Regularization
+model_r = Sequential([
+    Dense(120, activation='relu', kernel_regularizer=l2(0.1)),
+    Dense(40, activation='relu', kernel_regularizer=l2(0.1)),
+    Dense(classes, activation='linear')
+])
