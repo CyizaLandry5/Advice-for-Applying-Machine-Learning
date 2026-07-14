@@ -95,3 +95,20 @@ To avoid grader errors from the DeepLearning.AI AutoGrader, I made sure NOT to:
 - Comparable to "ideal" model performance
 - Test performance consistent with CV performance
 
+## 🔗 Key Concepts & Formulas
+- **Mean Squared Error (Regression):** `J = (1/(2m)) * Σ(yhat - y)²`
+- **Classification Error:** `J = (1/m) * Σ(yhat ≠ y)`
+- **L2 Regularization:** Adds `λ * Σ(w²)` to the loss function
+- **Bias-Variance Trade-off:** 
+  - High Bias (Underfitting): Model is too simple
+  - High Variance (Overfitting): Model is too complex
+- **Data Splitting:** Training (60%), Cross-Validation (20%), Test (20%)
+- **Learning Curve:** Training and CV error as function of training set size
+
+## 🧪 Implementation Highlights
+```python
+# Mean Squared Error
+def eval_mse(y, yhat):
+    m = len(y)
+    err = sum((yhat[i] - y[i])**2 for i in range(m))
+    return err / (2 * m)
